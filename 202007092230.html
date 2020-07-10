@@ -14,7 +14,35 @@
          if (r != null) return decodeURI(r[2]);
          return null;
      }
-    window.location.href="http://baidu.com";
+    
+    function isWeiXin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        console.log(ua);
+        if (ua.match(/MicroMessenger/i) == 'micromessenger' && ua.indexOf('mpcrawler') == -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    function isMobile() {
+        var userAgentInfo=navigator.userAgent;
+        var Agents =new Array("Android","iPhone","SymbianOS","Windows Phone","iPad","iPod");
+        var flag=true;
+        for(var v=0;v<Agents.length;v++) {
+            if(userAgentInfo.indexOf(Agents[v])>0) {
+                flag=false;
+                break;
+            }
+        }
+        return flag;
+    }
+    
+   if( !isWeiXin() || isMobile()){
+       window.location.href="http://818web.github.io";
+    } else{
+        window.location.href="http://baidu.com";  
+    }
 </script>
 </body>
 </html>
