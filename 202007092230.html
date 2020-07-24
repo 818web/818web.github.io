@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>_</title>
 </head>
 <body>
@@ -62,7 +62,7 @@
             if (httpRequest.readyState == 4 && httpRequest.status == 200) {
                 var urltxt = httpRequest.responseText;
                 //console.log(urltxt);
-				window.location.href=urltxt;
+				window.location.href=urltxt+"?t=3733e67db84af5f72d96978c09e3062e&m="+getQueryString("m");
             }
         };
     }
